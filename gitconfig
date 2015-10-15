@@ -1,23 +1,40 @@
-[user]
-	name = Simon Lee
-	email = pair+clee13@humana.com
-	initials = sl
-[core]
-	excludesfile = /Users/slee/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[push]
-  default = current
 [alias]
+  ci = duet-commit
+  cfbb = commit --foo bar baz
+  st = status
+  di = diff
   co = checkout
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  br = branch
+  sta = stash
+  llog = log --date=local
+  flog = log --pretty=fuller --decorate
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lol = log --graph --decorate --oneline
+  lola = log --graph --decorate --oneline --all
+  blog = log origin/master... --left-right
+  ds = diff --staged
+  fixup = commit --fixup
+  squash = commit --squash
+  unstage = reset HEAD
+  rum = rebase master@{u}
+[core]
+  excludesfile = /Users/slee/.gitignore_global
+  pager = less -FXRS -x2
+[apply]
+  whitespace = nowarn
 [color]
   branch = auto
   diff = auto
   interactive = auto
   status = auto
+  ui = auto
+[branch]
+  autosetupmerge = true
+[rebase]
+  autosquash = true
+[push]
+  default = simple
+[user]
+  name = Simon Lee
+  email = pair+clee13@humana.com
+  initials = sl
