@@ -1,0 +1,23 @@
+[user]
+	name = Simon Lee
+	email = pair+clee13@humana.com
+	initials = sl
+[core]
+	excludesfile = /Users/slee/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[push]
+  default = current
+[alias]
+  co = checkout
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
